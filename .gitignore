@@ -1,0 +1,6 @@
+cmake-build-debug/
+index.wasm
+index.js
+.DS_STORE
+.idea
+.vscode
