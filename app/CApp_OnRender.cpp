@@ -3,6 +3,12 @@
 //
 
 #include "./../CApp.h"
+#include "./CSurface/CSurface.h"
 
-void CApp::OnRender() {}
+void CApp::OnRender() {
+    CSurface::OnDraw(Surf_Display, Surf_Test, 0, 0);
+
+    SDL_Flip(Surf_Display);
+}
+
 

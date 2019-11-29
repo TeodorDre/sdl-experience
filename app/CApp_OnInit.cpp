@@ -3,6 +3,8 @@
 //
 
 #include "./../CApp.h"
+#include "./../app/CSurface/CSurface.h"
+#include "SDL/SDL.h"
 
 bool CApp::OnInit() {
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -10,6 +12,10 @@ bool CApp::OnInit() {
     }
 
     if ((Surf_Display = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) == nullptr) {
+        return false;
+    }
+
+    if ((Surf_Test = CSurface::OnLoad("image.bmp")) == nullptr) {
         return false;
     }
 
